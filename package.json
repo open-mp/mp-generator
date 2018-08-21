@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/open-mp/mp-factory.git"
@@ -14,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/open-mp/mp-factory/issues"
   },
-  "homepage": "https://github.com/open-mp/mp-factory#readme"
+  "homepage": "https://github.com/open-mp/mp-factory#readme",
+  "dependencies": {
+    "mvn-artifact-download": "^3.1.0"
+  }
 }
