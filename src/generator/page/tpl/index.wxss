@@ -1,0 +1,13 @@
+/**index.wxss**/
+page {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.container {
+    width: 100%;
+}
+.component{
+    width: 100%;
+}
