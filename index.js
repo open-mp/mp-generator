@@ -3,7 +3,6 @@
  */
 const projectGenerator = require('./src/generator/project');
 const appGenerator = require('./src/generator/app');
-
 const pageGenerator = require('./src/generator/page');
 
 /**
