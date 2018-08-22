@@ -1,0 +1,198 @@
+{
+  "mp": {
+    "id": 1,
+    "name": "测试小程序",
+    "description": "用来测试的小程序",
+    "config": {
+      "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "小程序模板",
+        "navigationBarTextStyle": "black"
+      },
+      "tabBar": {
+        "list": [{
+          "pageId": "",
+        }]
+      },
+      "tabBarButtons": [
+
+      ],
+      "pageUtil":{
+
+      }
+    }
+  },
+  "pageList": [
+    {
+      "mpId": 1,
+      "id": 1,
+      "name": "商品详情页",
+      "description": "",
+      "structure": "static",
+      "config": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "微信接口功能演示",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light"
+      },
+      "instanceList": [
+        {
+          "title": "商品详情",
+          "color": "",
+          "description": "",
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "config",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        },
+        {
+          "color": "#f9f9f9",
+          "content": "<p>商品信息</p>",
+          "fullscreen": 0,
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "richtext",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        },
+        {
+          "color": "#e5e5e5",
+          "hasPadding": false,
+          "lineType": "solid",
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "line",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        }
+      ]
+    },
+    {
+      "mpId": 1,
+      "id": 2,
+      "name": "微页面",
+      "description": "",
+      "structure": "dynamic",
+      "config": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "微信接口功能演示",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light"
+      },
+      "bundleList": [
+        {
+          "groupId": "",
+          "artifactId": "",
+          "version": "",
+          "classifier": ""
+        }
+      ]
+    },
+    {
+      "mpId": 1,
+      "id": 3,
+      "name": "下单",
+      "description": "",
+      "structure": "static",
+      "config": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "微信接口功能演示",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light"
+      },
+      "instanceList": [
+        {
+          "title": "下单",
+          "color": "",
+          "description": "",
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "config",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        },
+        {
+          "color": "#f9f9f9",
+          "content": "<p>下单</p>",
+          "fullscreen": 0,
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "richtext",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        },
+        {
+          "color": "#e5e5e5",
+          "hasPadding": false,
+          "lineType": "solid",
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "line",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        }
+      ]
+    },
+    {
+      "mpId": 1,
+      "id": 4,
+      "name": "购物车",
+      "description": "",
+      "structure": "static",
+      "config": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "微信接口功能演示",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light"
+      },
+      "instanceList": [
+        {
+          "title": "购物车",
+          "color": "",
+          "description": "",
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "config",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        },
+        {
+          "color": "#f9f9f9",
+          "content": "<p>购物车</p>",
+          "fullscreen": 0,
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "richtext",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        },
+        {
+          "color": "#e5e5e5",
+          "hasPadding": false,
+          "lineType": "solid",
+          "bundleId": {
+            "groupId": "org.tsxuemu.bundle.example",
+            "artifactId": "line",
+            "version": "1.0.0",
+            "classifier": ""
+          }
+        }
+      ]
+    }
+  ]
+}

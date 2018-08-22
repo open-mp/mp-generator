@@ -1,11 +1,10 @@
 /**
  * 调用generator生成小程序的各个部分
  */
-const projectGenerator = require('./generator/project');
-const appGenerator = require('./generator/app');
-const componentGenerator = require('./generator/component');
-const dynamicPageGenerator = require('./generator/dynamic-page');
-const staticPageGenerator = require('./generator/static-page');
+const projectGenerator = require('./src/generator/project');
+const appGenerator = require('./src/generator/app');
+
+const pageGenerator = require('./src/generator/page');
 
 /**
  * 生成小程序
@@ -14,8 +13,6 @@ const staticPageGenerator = require('./generator/static-page');
  */
 exports.generate = async function (mpDir, mpDefinition) {
     await projectGenerator.generate(mpDir, mpDefinition);
-    await componentGenerator.generate(mpDir, mpDefinition);
-    await dynamicPageGenerator.generate(mpDir, mpDefinition);
-    await staticPageGenerator.generate(mpDir, mpDefinition);
     await appGenerator.generate(mpDir, mpDefinition);
+    await pageGenerator.generate(mpDir, mpDefinition);
 }
