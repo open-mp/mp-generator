@@ -89,10 +89,13 @@
       },
       "bundleList": [
         {
-          "groupId": "",
-          "artifactId": "",
-          "version": "",
-          "classifier": ""
+          "id": 1,
+          "bundleId": {
+            "groupId": "",
+            "artifactId": "",
+            "version": "",
+            "classifier": ""
+          }
         }
       ]
     },

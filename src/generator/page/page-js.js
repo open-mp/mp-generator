@@ -1,20 +1,19 @@
-/**
- * onLoad
- * onShow
- * onReady
- * onHide
- * onUnload
- */
-
-/**
- * onPullDownRefresh
- * onReachBottom
- * onPageScroll
- * onShareAppMessage
- * onTabItemTap
- */
 exports.generate = async function (pageDir, mpDefinition) {
+    /**
+     * onLoad
+     * onShow
+     * onReady
+     * onHide
+     * onUnload
+     */
 
-    let tpl = await fs.readFile(path.resolve(__dirname, 'tpl/app.js'));
-    await fs.writeFile(path.resolve(appDir, 'app.js'), tpl);
+    /**
+     * onPullDownRefresh
+     * onReachBottom
+     * onPageScroll
+     * onShareAppMessage
+     * onTabItemTap
+     */
+    let tpl = await fs.readFile(path.resolve(__dirname, 'tpl/index.js'));
+    await fs.writeFile(path.resolve(pageDir, 'index.js'), tpl);
 }
