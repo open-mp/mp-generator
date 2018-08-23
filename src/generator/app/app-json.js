@@ -26,31 +26,39 @@ exports.generate = async function (appDir, mpDefinition) {
         let index = tabBarButtons.length;
         // 下载icon
         if (tab.iconUrl) {
-            let name = `${index}`;
+            let name = `${index}${path.extname(tab.iconUrl)}`;
             await download.downloadFile(tab.iconUrl, tabBarIconDir, name);
             iconPath = `${StructureConstant.tabBarIconDir}/${name}`;
         }
         if (tab.selectedIconUrl) {
-            let name = `${index}`;
+            let name = `${index}-selected${path.extname(tab.iconUrl)}`;
             await download.downloadFile(tab.iconUrl, tabBarIconDir, name);
             selectedIconPath = `${StructureConstant.tabBarIconDir}/${name}`;
         }
+        let tabDef = {};
         if (tab.pageStructure == "static") {
-            tabBarButtons.push({
+            tabDef = {
                 pagePath: `${StructureConstant.pagesDir}/${tab.pageName}/index`,
                 text: tab.text,
                 iconPath: iconPath,
                 selectedIconPath: selectedIconPath
-            })
+            }
         } else if (tab.pageStructure == "dynamic") {
-            tabBarButtons.push({
+            tabDef = {
                 pagePath: `${StructureConstant.pagesDir}/${tab.pageName}/index?contentId=${tab.contentId}`,
                 text: tab.text,
                 iconPath: iconPath,
                 selectedIconPath: selectedIconPath
-            })
+            }
         }
 
+        if (!iconPath) {
+            delete tabDef['iconPath']
+        }
+        if (!selectedIconPath) {
+            delete tabDef['selectedIconPath']
+        }
+        tabBarButtons.push(tabDef);
     }
     let tabBar = {
         color: mp.tabBar.color,
