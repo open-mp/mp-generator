@@ -15,6 +15,8 @@
   },
   "homepage": "https://github.com/open-mp/mp-factory#readme",
   "dependencies": {
+    "copy": "^0.3.2",
+    "download": "^7.1.0",
     "fs-extra": "^7.0.0",
     "jsonfile": "^4.0.0",
     "lodash": "^4.17.10",

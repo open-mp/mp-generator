@@ -2,7 +2,7 @@ const StructureConstant = require('../../utils/structure');
 const fs = require('fs-extra');
 const jsonFile = require('../../utils/json-file');
 const path = require('path');
-const download = require('../../utils/download');
+const download = require('download');
 
 exports.generate = async function (appDir, mpDefinition) {
     let {mp} = mpDefinition;
@@ -27,12 +27,16 @@ exports.generate = async function (appDir, mpDefinition) {
         // 下载icon
         if (tab.iconUrl) {
             let name = `${index}${path.extname(tab.iconUrl)}`;
-            await download.downloadFile(tab.iconUrl, tabBarIconDir, name);
+            await download(tab.iconUrl, tabBarIconDir,{
+                filename: name
+            });
             iconPath = `${StructureConstant.tabBarIconDir}/${name}`;
         }
         if (tab.selectedIconUrl) {
             let name = `${index}-selected${path.extname(tab.iconUrl)}`;
-            await download.downloadFile(tab.iconUrl, tabBarIconDir, name);
+            await download(tab.selectedIconUrl, tabBarIconDir,{
+                filename: name
+            });
             selectedIconPath = `${StructureConstant.tabBarIconDir}/${name}`;
         }
         let tabDef = {};
