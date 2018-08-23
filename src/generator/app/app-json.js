@@ -74,11 +74,11 @@ exports.generate = async function (appDir, mpDefinition) {
     };
 
     let window = {
-        "backgroundColor": mp.window.backgroundColor,
-        "backgroundTextStyle": mp.window.backgroundTextStyle,
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": mp.window.navigationBarBackgroundColor,
         "navigationBarTitleText": mp.window.navigationBarTitleText,
-        "navigationBarTextStyle": mp.window.navigationBarTextStyle
+        "navigationBarTextStyle": mp.window.navigationBarTextStyle,
     };
     await jsonFile.writeJSON(path.resolve(appDir, 'app.json'), {
         window,
