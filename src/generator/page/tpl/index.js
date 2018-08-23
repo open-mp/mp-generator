@@ -1,8 +1,8 @@
 const PageUtil = require("../../page-util/index.js")
 
+
 Page({
-    data: {
-    },
+    data: <%= JSON.stringify(pageData, null , 2) %>,
     pageUtil: null,
     onInited(event) {
         let {instance} = event.detail;

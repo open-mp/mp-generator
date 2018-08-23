@@ -1,0 +1,5 @@
+<view class="container">
+  <% _.forEach(components, function(component, index) { %>
+  <<%= component.name %> class="component" id="<%= component.name+'_'+index%>" bind:inited="onInited" config-data="{{<%= component.dataConfigKey %>}}" />
+  <% }); %>
+</view>

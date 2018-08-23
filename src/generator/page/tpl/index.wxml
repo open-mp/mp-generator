@@ -1,9 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <goods-detail class="component" id="mp-open-1" bind:inited="onInited"/>
-  <richtext  class="component" id="mp-open-2" bind:inited="onInited" config-data="{{richText}}"></richtext>
-  <image-ad  class="component" id="mp-open-3" bind:inited="onInited" config-data="{{imageAd}}"></image-ad>
-  <line class="component" id="mp-open-4" bind:inited="onInited"></line>
-  <whitespace  class="component" id="mp-open-5" bind:inited="onInited" config-data="{{whitespace}}"></whitespace>
-  <goods-action class="component" id="mp-open-6" bind:inited="onInited"/>
-</view>
