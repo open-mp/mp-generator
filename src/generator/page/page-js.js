@@ -14,7 +14,8 @@ exports.generate = async function (pageDir, pageDefinition) {
     for (let i = 0; i < instanceList.length; i++) {
         let instance = instanceList[i];
         let coordinate = instance.coordinate;
-        let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}_${i}`;
+        //  let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}_${i}`;
+        let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${i}`;
         let copyIns = JSON.parse(JSON.stringify(instance));
         delete copyIns['bundleId'];
         pageData[idStr] = copyIns;
