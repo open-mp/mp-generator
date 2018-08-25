@@ -10,10 +10,8 @@ exports.generate = async function (appDir, mpDefinition) {
 
     // 找出所有使用的组件,页面
     let componentIdsMap = {};
-
     let pageList = mpDefinition.pageList;
     for (let page of pageList) {
-        pageSet.add(page.name);
         if (page.structure == "static") {
             for (let component of page.instanceList) {
                 let bundleId = component.bundleId;

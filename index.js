@@ -1,6 +1,7 @@
 /**
  * 调用generator生成小程序的各个部分
  */
+console.log(require.resolve('./src/generator/project/index.js'), '---------------')
 const projectGenerator = require('./src/generator/project');
 const appGenerator = require('./src/generator/app');
 const pageGenerator = require('./src/generator/page');

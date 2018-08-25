@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const jsonFile = require('../../utils/json-file');
-const path = require('src/generator/project/index');
+const path = require('path');
 const StructureConstant = require('../../utils/structure');
 /**
  * 在mpDir目录下生成小程序代码

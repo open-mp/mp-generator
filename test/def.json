@@ -1,0 +1,226 @@
+{
+  "code": 0,
+  "data": {
+    "mp": {
+      "id": 1,
+      "name": "测试小程序",
+      "description": "用来测试的小程序",
+      "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTitleText": "小程序测试",
+        "navigationBarTextStyle": "black"
+      },
+      "tabBar": {
+        "color": "#000000",
+        "selectedColor": "#F70606",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "position": "bottom"
+      },
+      "tabBarButtons": [
+        {
+          "pageId": 1,
+          "pageName": "",
+          "pageStructure": "static",
+          "contentId": "",
+          "iconUrl": "",
+          "selectedIconUrl": "",
+          "text": "国庆活动"
+        },
+        {
+          "pageId": 2,
+          "pageName": "",
+          "pageStructure": "dynamic",
+          "contentId": 2,
+          "iconUrl": "",
+          "selectedIconUrl": "",
+          "text": "爆品"
+        }
+      ],
+      "pageUtil": {
+        "groupId": "tsxuehu",
+        "artifactId": "page-util",
+        "version": "1.0.0",
+        "classifier": ""
+      }
+    },
+    "pageList": [
+      {
+        "mpId": 1,
+        "id": 1,
+        "name": "goods-detail",
+        "label": "商品详情页",
+        "description": "",
+        "structure": "static",
+        "config": {
+          "navigationBarBackgroundColor": "#ffffff",
+          "navigationBarTextStyle": "black",
+          "navigationBarTitleText": "微信接口功能演示",
+          "backgroundColor": "#eeeeee",
+          "backgroundTextStyle": "light"
+        },
+        "instanceList": [
+          {
+            "title": "商品详情",
+            "color": "",
+            "description": "",
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "config",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          },
+          {
+            "color": "#f9f9f9",
+            "content": "商品信息",
+            "fullscreen": 0,
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "richtext",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          },
+          {
+            "color": "#e5e5e5",
+            "hasPadding": false,
+            "lineType": "solid",
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "line",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          }
+        ]
+      },
+      {
+        "mpId": 1,
+        "id": 2,
+        "name": "weizhazhi",
+        "label": "微页面",
+        "description": "",
+        "structure": "dynamic",
+        "config": {
+          "navigationBarBackgroundColor": "#ffffff",
+          "navigationBarTextStyle": "black",
+          "navigationBarTitleText": "微信接口功能演示",
+          "backgroundColor": "#eeeeee",
+          "backgroundTextStyle": "light"
+        },
+        "bundleList": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "instanceList": []
+      },
+      {
+        "mpId": 1,
+        "id": 3,
+        "name": "order",
+        "label": "下单",
+        "description": "",
+        "structure": "static",
+        "config": {
+          "navigationBarBackgroundColor": "#ffffff",
+          "navigationBarTextStyle": "black",
+          "navigationBarTitleText": "微信接口功能演示",
+          "backgroundColor": "#eeeeee",
+          "backgroundTextStyle": "light"
+        },
+        "instanceList": [
+          {
+            "title": "下单",
+            "color": "",
+            "description": "",
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "config",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          },
+          {
+            "color": "#f9f9f9",
+            "content": "下单",
+            "fullscreen": 0,
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "richtext",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          },
+          {
+            "color": "#e5e5e5",
+            "hasPadding": false,
+            "lineType": "solid",
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "line",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          }
+        ]
+      },
+      {
+        "mpId": 1,
+        "id": 4,
+        "name": "cart",
+        "label": "购物车",
+        "description": "",
+        "structure": "static",
+        "config": {
+          "navigationBarBackgroundColor": "#ffffff",
+          "navigationBarTextStyle": "black",
+          "navigationBarTitleText": "微信接口功能演示",
+          "backgroundColor": "#eeeeee",
+          "backgroundTextStyle": "light"
+        },
+        "instanceList": [
+          {
+            "title": "购物车",
+            "color": "",
+            "description": "",
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "config",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          },
+          {
+            "color": "#f9f9f9",
+            "content": "购物车",
+            "fullscreen": 0,
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "richtext",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          },
+          {
+            "color": "#e5e5e5",
+            "hasPadding": false,
+            "lineType": "solid",
+            "bundleId": {
+              "groupId": "tsxuehu",
+              "artifactId": "line",
+              "version": "1.0.0",
+              "classifier": ""
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
