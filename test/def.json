@@ -22,7 +22,7 @@
       "tabBarButtons": [
         {
           "pageId": 1,
-          "pageName": "",
+          "pageName": "goods-detail",
           "pageStructure": "static",
           "contentId": "",
           "iconUrl": "",
@@ -31,7 +31,7 @@
         },
         {
           "pageId": 2,
-          "pageName": "",
+          "pageName": "weizhazhi",
           "pageStructure": "dynamic",
           "contentId": 2,
           "iconUrl": "",
@@ -40,10 +40,13 @@
         }
       ],
       "pageUtil": {
-        "groupId": "tsxuehu",
-        "artifactId": "page-util",
-        "version": "1.0.0",
-        "classifier": ""
+        "id": 1,
+        "coordinate": {
+          "groupId": "tsxuehu",
+          "artifactId": "page-util",
+          "version": "1.0.0",
+          "classifier": ""
+        }
       }
     },
     "pageList": [
@@ -61,38 +64,36 @@
           "backgroundColor": "#eeeeee",
           "backgroundTextStyle": "light"
         },
+        "bundleList": [],
         "instanceList": [
           {
             "title": "商品详情",
             "color": "",
             "description": "",
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "config",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           },
           {
             "color": "#f9f9f9",
-            "content": "商品信息",
+            "content": "<p>商品信息</p>",
             "fullscreen": 0,
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "richtext",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           },
           {
             "color": "#e5e5e5",
             "hasPadding": false,
             "lineType": "solid",
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "line",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           }
         ]
@@ -112,12 +113,60 @@
           "backgroundTextStyle": "light"
         },
         "bundleList": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          {
+            "id": 1,
+            "name": "页面配置",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "config",
+              "version": "1.0.0"
+            }
+          },
+          {
+            "id": 2,
+            "name": "图片广告",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "image-ad",
+              "version": "1.0.0"
+            }
+          },
+          {
+            "id": 3,
+            "name": "富文本",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "richtext",
+              "version": "1.0.0"
+            }
+          },
+          {
+            "id": 4,
+            "name": "分隔符",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "line",
+              "version": "1.0.0"
+            }
+          },
+          {
+            "id": 5,
+            "name": "空白行",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "whitespace",
+              "version": "1.0.0"
+            }
+          },
+          {
+            "id": 6,
+            "name": "商品详情",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "goods-detail",
+              "version": "1.0.0"
+            }
+          }
         ],
         "instanceList": []
       },
@@ -135,38 +184,36 @@
           "backgroundColor": "#eeeeee",
           "backgroundTextStyle": "light"
         },
+        "bundleList": [],
         "instanceList": [
           {
             "title": "下单",
             "color": "",
             "description": "",
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "config",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           },
           {
             "color": "#f9f9f9",
-            "content": "下单",
+            "content": "<p>下单</p>",
             "fullscreen": 0,
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "richtext",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           },
           {
             "color": "#e5e5e5",
             "hasPadding": false,
             "lineType": "solid",
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "line",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           }
         ]
@@ -185,38 +232,36 @@
           "backgroundColor": "#eeeeee",
           "backgroundTextStyle": "light"
         },
+        "bundleList": [],
         "instanceList": [
           {
             "title": "购物车",
             "color": "",
             "description": "",
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "config",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           },
           {
             "color": "#f9f9f9",
-            "content": "购物车",
+            "content": "<p>购物车</p>",
             "fullscreen": 0,
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "richtext",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           },
           {
             "color": "#e5e5e5",
             "hasPadding": false,
             "lineType": "solid",
-            "bundleId": {
+            "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "line",
-              "version": "1.0.0",
-              "classifier": ""
+              "version": "1.0.0"
             }
           }
         ]

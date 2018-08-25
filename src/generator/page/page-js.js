@@ -1,4 +1,6 @@
 const template = require('lodash/template');
+const fs = require('fs-extra');
+const path = require('path');
 
 exports.generate = async function (pageDir, pageDefinition) {
 
@@ -11,8 +13,8 @@ exports.generate = async function (pageDir, pageDefinition) {
     let instanceList = pageDefinition.instanceList;
     for (let i = 0; i < instanceList.length; i++) {
         let instance = instanceList[i];
-        let bundleId = instance.bundleId;
-        let idStr = `${bundleId.groupId}_${bundleId.artifactId}_${bundleId.version}_${i}`;
+        let coordinate = instance.coordinate;
+        let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}_${i}`;
         let copyIns = JSON.parse(JSON.stringify(instance));
         delete copyIns['bundleId'];
         pageData[idStr] = copyIns;

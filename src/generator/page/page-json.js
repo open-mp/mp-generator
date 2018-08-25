@@ -1,21 +1,24 @@
 const fs = require('fs-extra');
 const jsonFile = require('../../utils/json-file');
 const StructureConstant = require('../../utils/structure');
-
+const path = require('path');
 exports.generate = async function (pageDir, pageDefinition) {
 
     let usingComponents = {};
     let bundleList = [];
     if (pageDefinition.structure == 'static') {
-        bundleList = pageDefinition.instanceList;
+        bundleList = pageDefinition.instanceList.filter((instance, index) => {
+            return index > 0;
+        });
 
     } else if (pageDefinition.structure == 'dynamic') {
         bundleList = pageDefinition.bundleList;
     }
     for (let bundle of bundleList) {
-        let bundleId = bundle.bundleId;
-        let name = `${bundleId.groupId}_${bundleId.artifactId}_${bundleId.version}`;
-        usingComponents[name] = `${StructureConstant.componentsDir}/${name}`;
+        let coordinate = bundle.coordinate;
+        // let name = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}`;
+        let name = `${coordinate.groupId}_${coordinate.artifactId}`;
+        usingComponents[name] = `/${StructureConstant.componentsDir}/${name}/index`;
     }
 
     let config = {

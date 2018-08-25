@@ -14,7 +14,7 @@ exports.generate = async function (appDir, mpDefinition) {
     // 1. pages
     let pages = [];
     for (let page of pageSet.entries()) {
-        pages.push(`${StructureConstant.pagesDir}/${page}/index`)
+        pages.push(`${StructureConstant.pagesDir}/${page[0]}/index`)
     }
     // 2. tabBar
     let tabBarIconDir = path.resolve(appDir, StructureConstant.tabBarIconDir);
@@ -48,8 +48,8 @@ exports.generate = async function (appDir, mpDefinition) {
                 selectedIconPath: selectedIconPath
             }
         } else if (tab.pageStructure == "dynamic") {
-            tabDef = {
-                pagePath: `${StructureConstant.pagesDir}/${tab.pageName}/index?contentId=${tab.contentId}`,
+           tabDef = {
+                pagePath: `${StructureConstant.pagesDir}/${tab.pageName}/index`,
                 text: tab.text,
                 iconPath: iconPath,
                 selectedIconPath: selectedIconPath

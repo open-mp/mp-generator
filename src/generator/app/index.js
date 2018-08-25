@@ -12,20 +12,19 @@ exports.generate = async function (appDir, mpDefinition) {
     let componentIdsMap = {};
     let pageList = mpDefinition.pageList;
     for (let page of pageList) {
+        let list = [];
         if (page.structure == "static") {
-            for (let component of page.instanceList) {
-                let bundleId = component.bundleId;
-                let idStr = `${bundleId.groupId}_${bundleId.artifactId}_${bundleId.version}`;
-                componentIdsMap[idStr] = bundleId;
-            }
+            list = page.instanceList;
         } else if (page.structure == "dynamic") {
-            for (let component of page.bundleList) {
-                let bundleId = component.bundleId;
-                let idStr = `${bundleId.groupId}_${bundleId.artifactId}_${bundleId.version}`;
-                componentIdsMap[idStr] = bundleId;
-            }
+            list = page.bundleList;
         }
-
+        for (let i = 1; i< list.length; i++) {
+            let component = list[i];
+            let coordinate = component.coordinate;
+           // let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}`;
+            let idStr = `${coordinate.groupId}_${coordinate.artifactId}`;
+            componentIdsMap[idStr] = coordinate;
+        }
     }
     // 复制小程序组件
     await fs.mkdir(path.resolve(appDir, StructureConstant.componentsDir));
@@ -37,10 +36,13 @@ exports.generate = async function (appDir, mpDefinition) {
         await packageResolver.copyComponent(bundleId, componentDir);
     }
 
+    // 页面目录
+    await fs.mkdir(path.resolve(appDir, StructureConstant.pagesDir));
+
     // 复制page utils
-    let pageUtilsDir = page.resolve(appDir, StructureConstant.pageUtilDir);
+    let pageUtilsDir = path.resolve(appDir, StructureConstant.pageUtilDir);
     await fs.mkdir(pageUtilsDir);
-    await packageResolver.copyPageUtil(mpDefinition.mp.config.pageUtil, pageUtilsDir);
+    await packageResolver.copyPageUtil(mpDefinition.mp.pageUtil, pageUtilsDir);
 
     // app.json生成
     await appJson.generate(appDir, mpDefinition);

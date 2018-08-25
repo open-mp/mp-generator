@@ -28,23 +28,23 @@ class PackageResolver {
     /**
      * 将bundleId中的pageUtil复制到distDir中
      */
-    async copyPageUtil(bundleId, distDir) {
-        let {groupId, artifactId, version} = bundleId;
-        let bundlePath = path.resolve(__dirname, '../../mp-demo');
-        let bundle = await fs.readJSON(path.resolve(__dirname, 'bundle.json'));
-        let pageUtilPath = path.resolve(bundlePath, bundle.pageUtil);
+    async copyPageUtil(bundle, distDir) {
+        let bundlePath = path.resolve(__dirname, '../../../mp-demo');
+        let bundleJson = await fs.readJSON(path.resolve(bundlePath, 'bundle.json'));
+        let pageUtilPath = path.resolve(bundlePath, bundleJson.pageUtil);
         await fs.copy(pageUtilPath, distDir);
     }
 
     /**
      * 将bundleId中的小城序组件复制到distDir中
      */
-    async copyComponent(bundleId, distDir) {
-        let {groupId, artifactId, version} = bundleId;
-        let bundleDir = path.resovle(__dirname, '../../bundle',
+    async copyComponent(coordinate, distDir) {
+        let {groupId, artifactId, version} = coordinate;
+        let bundleDir = path.resolve(__dirname, '../../../bundle',
             pathMap[`${groupId}-${artifactId}-${version}`]);
+
         let bundle = await fs.readJSON(path.resolve(bundleDir, 'bundle.json'));
-        let componentPath = path.resolve(bundlePath, bundle.mpComponent);
+        let componentPath = path.resolve(bundleDir, bundle.mpComponent);
         await fs.copy(componentPath, distDir);
     }
 }

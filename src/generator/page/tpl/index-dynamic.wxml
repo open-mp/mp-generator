@@ -1,6 +1,6 @@
 <view class="container">
 <block wx:for="{{instanceList}}" wx:for-index="idx" wx:for-item="instance">
-<% _.forEach(components, function(component) { %>
+<% components.forEach(function(component) { %>
     <<%= component.name %>
         wx:if="{{instance.componentName == '<%= component.name %>'}}"
         id="<%= component.name%>_{{idx}}"

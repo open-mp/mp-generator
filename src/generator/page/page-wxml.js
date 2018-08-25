@@ -1,4 +1,6 @@
 const template = require('lodash/template');
+const fs = require('fs-extra');
+const path = require('path');
 
 exports.generate = async function (pageDir, pageDefinition) {
 
@@ -8,10 +10,11 @@ exports.generate = async function (pageDir, pageDefinition) {
         let compiled = template(tpl);
         let instanceList = pageDefinition.instanceList;
         let components = [];
-        for (let i = 0; i < instanceList.length; i++) {
+        for (let i = 1; i < instanceList.length; i++) {
             let instance = instanceList[i];
-            let bundleId = instance.bundleId;
-            let idStr = `${bundleId.groupId}_${bundleId.artifactId}_${bundleId.version}`;
+            let coordinate = instance.coordinate;
+           // let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}`;
+            let idStr = `${coordinate.groupId}_${coordinate.artifactId}`;
             components.push({
                 name: idStr,
                 dataConfigKey: `${idStr}_${i}`
@@ -24,8 +27,9 @@ exports.generate = async function (pageDir, pageDefinition) {
         let bundleList = pageDefinition.bundleList;
         let components = [];
         for (let bundle of bundleList) {
-            let bundleId = bundle.bundleId;
-            let idStr = `${bundleId.groupId}_${bundleId.artifactId}_${bundleId.version}`;
+            let coordinate = bundle.coordinate;
+           // let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}`;
+            let idStr = `${coordinate.groupId}_${coordinate.artifactId}`;
             components.push({
                 name: idStr,
             })
