@@ -12,10 +12,20 @@ exports.generate = async function (appDir, mpDefinition) {
     }
 
     // 1. pages
-    let pages = [];
+    let pages = [
+        `${StructureConstant.pagesDir}/dynamic/index`
+    ];
     for (let page of pageSet.entries()) {
         pages.push(`${StructureConstant.pagesDir}/${page[0]}/index`)
     }
+    let tabBars = mp.tabBarButtons;
+    for (let i = 0; i < tabBars.length; i++) {
+        let tabBar = tabBars[i];
+        if (tabBar.pageType == 'dynamic') {
+            pages.push(`${StructureConstant.pagesDir}/dynamic-${i}/index`)
+        }
+    }
+
     // 2. tabBar
     let tabBarIconDir = path.resolve(appDir, StructureConstant.tabBarIconDir);
     await fs.mkdir(tabBarIconDir);
