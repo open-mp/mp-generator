@@ -2,25 +2,35 @@ const template = require('lodash/template');
 const fs = require('fs-extra');
 const path = require('path');
 
-exports.generate = async function (pageDir, pageDefinition, tabIndex) {
+exports.generate = async function (pageDir, dynamic, tabIndex) {
 
     let tpl = await fs.readFile(path.resolve(__dirname, 'tpl/index.js'));
     let compiled = template(tpl);
 
     let pageData = {
-        instanceList: [],
-        tabIndex
+        instanceList: []
     };
-    let instanceList = pageDefinition.instanceList;
-    for (let i = 0; i < instanceList.length; i++) {
-        let instance = instanceList[i];
-        let coordinate = instance.coordinate;
+    if (tabIndex > -1) {
+        pageData.tabIndex = tabIndex;
+    }
+
+    let components = [];
+    let bundleList = dynamic.bundleList;
+    for (let i = 0; i < bundleList.length; i++) {
+        let bundle = bundleList[i];
+        let coordinate = bundle.coordinate;
         //  let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}_${i}`;
         let idStr = `${coordinate.groupId}_${coordinate.artifactId}_${i}`;
-        let copyIns = JSON.parse(JSON.stringify(instance));
-        delete copyIns['bundleId'];
-        pageData[idStr] = copyIns;
+        components.push({
+            name: idStr
+        })
     }
+
+    let content = compiled({
+        pageData,
+        components
+    });
+    await fs.writeFile(path.resolve(pageDir, 'index.js'), content);
     /**
      * onLoad
      * onShow
@@ -36,6 +46,5 @@ exports.generate = async function (pageDir, pageDefinition, tabIndex) {
      * onShareAppMessage
      * onTabItemTap
      */
-    let content = compiled({pageData});
-    await fs.writeFile(path.resolve(pageDir, 'index.js'), content);
+
 }

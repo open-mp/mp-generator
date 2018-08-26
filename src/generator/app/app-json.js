@@ -20,21 +20,22 @@ exports.generate = async function (appDir, mpDefinition) {
     let tabBarIconDir = path.resolve(appDir, StructureConstant.tabBarIconDir);
     await fs.mkdir(tabBarIconDir);
     let tabBarButtons = [];
-    for (let tab of mpDefinition.mp.tabBarButtons) {
+    for (let i = 0; i < mpDefinition.mp.tabBarButtons.length; i++) {
+        let tab = mpDefinition.mp.tabBarButtons[i];
         let iconPath = null;
         let selectedIconPath = null;
         let index = tabBarButtons.length;
         // 下载icon
         if (tab.iconUrl) {
             let name = `${index}${path.extname(tab.iconUrl)}`;
-            await download(tab.iconUrl, tabBarIconDir,{
+            await download(tab.iconUrl, tabBarIconDir, {
                 filename: name
             });
             iconPath = `${StructureConstant.tabBarIconDir}/${name}`;
         }
         if (tab.selectedIconUrl) {
             let name = `${index}-selected${path.extname(tab.iconUrl)}`;
-            await download(tab.selectedIconUrl, tabBarIconDir,{
+            await download(tab.selectedIconUrl, tabBarIconDir, {
                 filename: name
             });
             selectedIconPath = `${StructureConstant.tabBarIconDir}/${name}`;
@@ -48,8 +49,8 @@ exports.generate = async function (appDir, mpDefinition) {
                 selectedIconPath: selectedIconPath
             }
         } else if (tab.pageType == "dynamic") {
-           tabDef = {
-                pagePath: `${StructureConstant.pagesDir}/${tab.pageName}/index`,
+            tabDef = {
+                pagePath: `${StructureConstant.pagesDir}/dynamic-${i}/index`,
                 text: tab.text,
                 iconPath: iconPath,
                 selectedIconPath: selectedIconPath

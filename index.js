@@ -4,6 +4,7 @@
 const projectGenerator = require('./src/generator/project');
 const appGenerator = require('./src/generator/app');
 const pageGenerator = require('./src/generator/page');
+const dynamicGenerator = require('./src/generator/dynamic');
 const path = require('path');
 const StructureConstant = require('./src/utils/structure');
 
@@ -18,7 +19,16 @@ exports.generate = async function (projectDir, mpDefinition) {
     await appGenerator.generate(mpDir, mpDefinition);
     await pageGenerator.generate(mpDir, mpDefinition);
 
+    let {dynamic, mp} = mpDefinition;
+    let tabBarButtons = mp.tabBarButtons;
+    await dynamicGenerator.generate(mpDir, dynamic);
     // 生成tab中的动态页 TODO  pagename-tarbar-index
+    for (let i = 0; i < tabBarButtons.length; i++) {
+        let tabBar = tabBarButtons[i];
+        if (tabBar.pageType == 'dynamic') {
+            await dynamicGenerator.generate(mpDir, dynamic, i);
+        }
+    }
 }
 
 
