@@ -13,9 +13,9 @@ exports.generate = async function (appDir, mpDefinition) {
     let pageList = mpDefinition.pageList;
     for (let page of pageList) {
         let list = [];
-        if (page.structure == "static") {
+        if (page.type == "static") {
             list = page.instanceList;
-        } else if (page.structure == "dynamic") {
+        } else if (page.type == "dynamic") {
             list = page.bundleList;
         }
         for (let i = 1; i< list.length; i++) {

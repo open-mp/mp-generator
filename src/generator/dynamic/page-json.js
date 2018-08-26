@@ -5,10 +5,15 @@ const path = require('path');
 exports.generate = async function (pageDir, pageDefinition) {
 
     let usingComponents = {};
-    let bundleList = pageDefinition.instanceList.filter((instance, index) => {
-        return index > 0;
-    });
+    let bundleList = [];
+    if (pageDefinition.type == 'static') {
+        bundleList = pageDefinition.instanceList.filter((instance, index) => {
+            return index > 0;
+        });
 
+    } else if (pageDefinition.type == 'dynamic') {
+        bundleList = pageDefinition.bundleList;
+    }
     for (let bundle of bundleList) {
         let coordinate = bundle.coordinate;
         // let name = `${coordinate.groupId}_${coordinate.artifactId}_${coordinate.version}`;

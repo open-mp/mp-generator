@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "goods-detail": "/components/goods-detail/index",
+    "richtext": "/components/richtext/index",
+    "image-ad": "/components/image-ad/index",
+    "line": "/components/line/index",
+    "whitespace": "/components/whitespace/index",
+    "goods-action": "/components/goods-action/index"
+  }
+}

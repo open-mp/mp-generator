@@ -18,7 +18,7 @@ exports.generate = async function (projectDir, mpDefinition) {
     await appGenerator.generate(mpDir, mpDefinition);
     await pageGenerator.generate(mpDir, mpDefinition);
 
-    // 生成tab中的动态页 TODO
+    // 生成tab中的动态页 TODO  pagename-tarbar-index
 }
 
 

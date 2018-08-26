@@ -40,14 +40,14 @@ exports.generate = async function (appDir, mpDefinition) {
             selectedIconPath = `${StructureConstant.tabBarIconDir}/${name}`;
         }
         let tabDef = {};
-        if (tab.pageStructure == "static") {
+        if (tab.pageType == "static") {
             tabDef = {
                 pagePath: `${StructureConstant.pagesDir}/${tab.pageName}/index`,
                 text: tab.text,
                 iconPath: iconPath,
                 selectedIconPath: selectedIconPath
             }
-        } else if (tab.pageStructure == "dynamic") {
+        } else if (tab.pageType == "dynamic") {
            tabDef = {
                 pagePath: `${StructureConstant.pagesDir}/${tab.pageName}/index`,
                 text: tab.text,
