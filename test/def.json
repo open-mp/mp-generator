@@ -53,54 +53,6 @@
     "pageList": [
       {
         "mpId": 1,
-        "id": 3,
-        "name": "order",
-        "label": "下单",
-        "description": "",
-        "type": "static",
-        "config": {
-          "navigationBarBackgroundColor": "#ffffff",
-          "navigationBarTextStyle": "black",
-          "navigationBarTitleText": "微信接口功能演示",
-          "backgroundColor": "#eeeeee",
-          "backgroundTextStyle": "light"
-        },
-        "bundleList": [],
-        "instanceList": [
-          {
-            "title": "下单",
-            "color": "",
-            "description": "",
-            "coordinate": {
-              "groupId": "tsxuehu",
-              "artifactId": "config",
-              "version": "1.0.0"
-            }
-          },
-          {
-            "color": "#f9f9f9",
-            "content": "<p>下单</p>",
-            "fullscreen": 0,
-            "coordinate": {
-              "groupId": "tsxuehu",
-              "artifactId": "richtext",
-              "version": "1.0.0"
-            }
-          },
-          {
-            "color": "#e5e5e5",
-            "hasPadding": false,
-            "lineType": "solid",
-            "coordinate": {
-              "groupId": "tsxuehu",
-              "artifactId": "line",
-              "version": "1.0.0"
-            }
-          }
-        ]
-      },
-      {
-        "mpId": 1,
         "id": 1,
         "name": "goods-detail",
         "label": "商品详情页",
@@ -158,6 +110,54 @@
             "coordinate": {
               "groupId": "tsxuehu",
               "artifactId": "goods-action",
+              "version": "1.0.0"
+            }
+          }
+        ]
+      },
+      {
+        "mpId": 1,
+        "id": 3,
+        "name": "order",
+        "label": "下单",
+        "description": "",
+        "type": "static",
+        "config": {
+          "navigationBarBackgroundColor": "#ffffff",
+          "navigationBarTextStyle": "black",
+          "navigationBarTitleText": "微信接口功能演示",
+          "backgroundColor": "#eeeeee",
+          "backgroundTextStyle": "light"
+        },
+        "bundleList": [],
+        "instanceList": [
+          {
+            "title": "下单",
+            "color": "",
+            "description": "",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "config",
+              "version": "1.0.0"
+            }
+          },
+          {
+            "color": "#f9f9f9",
+            "content": "<p>下单</p>",
+            "fullscreen": 0,
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "richtext",
+              "version": "1.0.0"
+            }
+          },
+          {
+            "color": "#e5e5e5",
+            "hasPadding": false,
+            "lineType": "solid",
+            "coordinate": {
+              "groupId": "tsxuehu",
+              "artifactId": "line",
               "version": "1.0.0"
             }
           }

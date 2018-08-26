@@ -12,13 +12,12 @@ exports.generate = async function (appDir, mpDefinition) {
     }
 
     // 1. pages
-    let pages = [
-        `${StructureConstant.pagesDir}/dynamic/index`
-    ];
+    let pages = [];
     for (let page of pageSet.entries()) {
         pages.push(`${StructureConstant.pagesDir}/${page[0]}/index`)
     }
     let tabBars = mp.tabBarButtons;
+    pages.push(`${StructureConstant.pagesDir}/dynamic/index`)
     for (let i = 0; i < tabBars.length; i++) {
         let tabBar = tabBars[i];
         if (tabBar.pageType == 'dynamic') {
